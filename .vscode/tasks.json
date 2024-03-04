@@ -1,0 +1,43 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Compilar",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-lm",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tarea que únicamente compila"
+        },
+        {
+            "label": "Compilar y ejecutar",
+            "type": "shell",
+            "command": "/usr/bin/gcc ${file} -lm -o ${fileBasenameNoExtension}  && ./${fileBasenameNoExtension} ",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tarea que compila y ejecuta"
+        }
+    ],
+    "version": "2.0.0"
+}
